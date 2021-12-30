@@ -1,2 +1,20 @@
 \section{Related Work}
-This is related work.
+CoNaLa~\cite{yin2018mining} dataset extracted from STACK OVERFLOW (SO) with three
+specific elements, \textit{Intent}, \textit{Context}, and \textit{Snippet}.
+Intent is a description in English of what the question wants to do.
+Context is a piece of code that does not implement the intent, but is necessary
+setup. Snippet is a piece of code that actually implements the Intent. Then, they
+learned learned from a small number of annotated example, which made the
+code/natural language pair dataset from the SO.
+
+In ~\cite{orlanski2021reading}, they expanded CoNaLa dataset by adding the textual question
+bodies from StackExchange API and comibined simple BART~\cite{lewis2019bart}
+model to generate answering code for quesiton. By adopting BART, they improved
+model performance (BLEU score) as mush as state-of-the-art.
+
+In ~\cite{xu2018kernelpatchwork}, they presented Multi-level dataset of LKML project on the Linux
+kernel patchwork. They deal with the dataset divided 3-level. level 0 data
+contain raw data for LKML files, level 1 data is stored by MySQL database from
+level 0 data. Level 2 data is more specifically categorized from level 1 data,
+which can reduce researcher effort in collecting, cleaning, and proccessing
+patch data.

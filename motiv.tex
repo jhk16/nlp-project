@@ -1,2 +1,56 @@
+\begin{figure}[t]
+\centering
+\includegraphics[width=3.3in]{so_trend1}
+\includegraphics[width=3.3in]{so_trend2}
+\caption{Stack Overflow trends of most popular languages for last
+decade(top) and the trends of system-related languages for stack
+overflow(bottom)}
+\label{fig:so_trend}
+\end{figure}
+
 \section{Motivation}
-In this secetion, I will describe why I choose this ev
+With the exisiting dataset natural language(NL) and programming language(PL) code 
+snippet pair, most of question and answer dataset for low level PL like C/C++
+and interpreter language related to computer system like bash shell script are
+not relatevely focused on code generation and summarization tasks,
+which is because of meanning representation difficulty.
+
+In prior works about NL to code generation and code summarization
+~\cite{xu20aclcodegen, orlanski2021reading, yin2018mining, parvez2021retrieval,
+feng2020codebert}, their approaches are mainly
+based on many used PL such as Python, Java, JavaScript, etc. It
+may be because those PL have numerical libraries and documentations. Beside, the
+number of users using high-level PL are also relatively larger than users using
+low-level PL such as C/C++, Assembly code and shell script languages such as sh,
+csh and bash.
+
+Figure~\ref{fig:so_trend}(top) show the most popular PL from Stack Overflow trends
+for the last decade by using tag of questoin. With the convienience and
+accessiblity, Python has been top popular language. After 2014, since Deep
+Neural Network(DNN) framework like tensorflow and pytorch are develped and
+widly used, Python question ratio of SO significantly increased.
+
+Figure~\ref{fig:so_trend}(bottom) describe the usage of
+low-level PL and shell script lanagues. We can realize questions for those PL
+are not frequently asked by users due to relatevly lack of users. But we know
+that QA dataset for low-level PL is needed to many operating system and computer
+architecture researchers and engineers because emerging hardwares require
+suitable softwoare supporting.
+
+To expand dataset for such non-focused PL, we need to collect
+from not only SO QA NL-PL code pair, but also various open source commnuity for
+system software lanagues such as Linux Kernel Mailing List(LKML) and Ask Ubuntu
+for shell. There is LKML archive dataset from
+Keggle~\cite{miasoedov2017lkmlarchive}, but there are no code and discussions
+for this dataset.
+
+By using LKML dataset, I anticipate the
+sentimental analysis for commit with review messages from kenrel maintainer is
+possible cases to exploit that dataset. another thing what I proposed method for
+that dataset is code summarization for code patches.
+
+Most of linux kernel patch
+has code difference compared to previous version of kernel and commit message
+describing what they add new features or remove unnecessary code for readability
+or fix kernel panic bug. We can exploit those information from kernel patch mail
+to summarize code or describing why they optimize code for their goals.
